@@ -59,7 +59,7 @@ public class MainRestController {
         return ResponseEntity.ok("Updated details of  " + savedCustomer.getFirstName());
     }
 
-    @PostMapping("/update/order")
+    @PutMapping("/update/order")
     public ResponseEntity<?> updateOrderForCustomer(@RequestBody OrderInfo orderInfo) {
         LOG.info("updateOrderForCustomer({})", orderInfo);
         Optional<Customer> customerOpt = customerRepository.findById(orderInfo.getCustomerId());
